@@ -1,21 +1,22 @@
-
 <mat-card>
-<h2>Customer List</h2>
+  <h2>Lista de Usuarios</h2>
 </mat-card>
 <mat-list *ngFor="let c of customers">
-    <mat-card>
-        <mat-card-content>
-  <mat-list-item>
-    <mat-list-item class="example_spacer2" routerLink="/api/customers/{{c.id_usuario}}">
-      <span>
-     <span>ID: </span>{{c.id_usuario}}
-     <br/>
-     <span>Name: </span> {{c.usuario_usuario}}
-    </span>  
-  </mat-list-item>
-    <span><button (click)="delete(c)" mat-raised-button color="warn">Delete</button></span>
-    <span class="example_spacer"></span>
-  </mat-list-item>
-</mat-card-content>
-</mat-card>
+  <mat-card>
+    <mat-card-content>
+      <mat-list-item>
+        <mat-list-item class="example_spacer2" routerLink="/api/customers/{{c.id_usuario}}">
+          <span>
+            <span>ID: </span>{{c.id_usuario}}
+            <br />
+            <span>Usuario: </span> {{c.usuario_usuario}}
+            <br />
+            <span>Nombre: </span> {{c.nombre_usuario}}
+          </span>
+        </mat-list-item>
+        <span><button (click)="delete(c)" mat-raised-button color="warn">Delete</button></span>
+        <span class="example_spacer"></span>
+      </mat-list-item>
+    </mat-card-content>
+  </mat-card>
 </mat-list>

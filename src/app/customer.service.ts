@@ -13,7 +13,8 @@ const httpOptions = {
 export class CustomerService {
 
   //private baseUrl = 'http://localhost:8090';
-  private baseUrl = 'http://180.5.5.187:8084';
+  //private baseUrl = 'http://192.168.0.187:8084';  //host my house, backend-server
+  private baseUrl = 'http://180.5.5.187:8084'; //host my work, backend-server
   private serviceUrlAnterior="/customers";
   private serviceUrlTestMasr="/ai/usuario/buscar/id";
   private serviceUrlTestMasrBuscar="/ai/usuario/buscar/nombre?buscar_texto= &pagina=1";
@@ -24,7 +25,7 @@ export class CustomerService {
   }
 
    getCustomer(id: number): Observable<Customer> {
-    const url = `${this.baseUrl}${this.serviceUrl}/id_usuario=${id}`;
+    const url = `${this.baseUrl}${this.serviceUrl}?id_usuario=${id}`;
     return this.http.get<Customer>(url);
   }
 

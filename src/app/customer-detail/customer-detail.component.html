@@ -1,70 +1,62 @@
 <button mat-raised-button color="warn" (click)="back()">Back</button>
-<br/><br/>
-
-
+<br /><br />
 <div>
   <div *ngIf="customer">
     <mat-card>
       <div>
         <mat-form-field>
-         <input matInput [(ngModel)]="customer.id_usuario" placeholder="ID"/>
-       </mat-form-field>
-      </div>
-
-      <div>
-        <mat-form-field>
-         <input matInput [(ngModel)]="customer.nombre_usuario" placeholder="Nombre"/>
+          <input matInput [(ngModel)]="customer.id_usuario" placeholder="ID" />
         </mat-form-field>
       </div>
       <div>
         <mat-form-field>
-          <input matInput [ngModel]="customer.usuario_usuario" placeholder="Usuario"/>
+          <input matInput [(ngModel)]="customer.nombre_usuario" placeholder="Nombre" />
         </mat-form-field>
       </div>
-
       <div>
-       <mat-form-field>
-        <input matInput [(ngModel)]="customer.clave_usuario" placeholder="Phone Number"/>
-      </mat-form-field>
-    </div>
-
-<!--     <div>
+        <mat-form-field>
+          <input matInput [ngModel]="customer.usuario_usuario" placeholder="Usuario" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput [(ngModel)]="customer.clave_usuario" placeholder="Phone Number" />
+        </mat-form-field>
+      </div>
+      <!--<div>
       <mat-form-field>
          <input matInput [(ngModel)]="customer.email" placeholder="Email"/>
       </mat-form-field>
     </div> -->
-
-<button mat-raised-button color="primary" (click)="update(customer)">Update</button>
-</mat-card>
+      <button mat-raised-button color="primary" (click)="update(customer)">Update</button>
+    </mat-card>
+  </div>
 </div>
-</div>
-
 <div>
   <div *ngIf="!customer">
     <mat-card>
-    <div>
-    <mat-form-field>
-      <input matInput #name placeholder="Name"/>
-    </mat-form-field>
+      <div>
+        <mat-form-field>
+          <input matInput #nombre placeholder="Nombre" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput #usuario placeholder="Usuario" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput #phone_number placeholder="Phone Number" />
+        </mat-form-field>
+      </div>
+<!--       <div>
+        <mat-form-field>
+          <input matInput #email placeholder="Email" />
+        </mat-form-field>
+      </div> -->
+      <br />
+      <button mat-raised-button color="primary" (click)="add(nombre.value, usuario.value, phone_number.value);">Save</button>
+    </mat-card>
   </div>
-  <div>
-    <mat-form-field>
-      <input matInput #address placeholder="Address"/>
-    </mat-form-field>
-  </div>
-  <div>
-    <mat-form-field>
-      <input matInput #phone_number placeholder="Phone Number"/>
-    </mat-form-field>
-  </div>
-  <div>
-    <mat-form-field>
-      <input matInput #email placeholder="Email"/>
-    </mat-form-field>
-  </div>
-  <br/>
-    <button mat-raised-button color="primary" (click)="add(name.value, address.value, phone_number.value,
-                    email.value);">Save</button>
-   </mat-card>
-   </div>
-  </div>
+</div>
