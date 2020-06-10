@@ -19,12 +19,12 @@ export class CustomerDetailComponent implements OnInit {
       .subscribe(customer => this.customer = customer);
   }
 
-id_usuario: number;
+    id_usuario: number=0;
     usuario_usuario: string;
     nombre_usuario: string;
     clave_usuario: string;
   //add(name: string, address: string, phone_number: string, email: string): void {
-  add(id_usuario: number, usuario_usuario: string, nombre_usuario: string, clave_usuario): void {
+  add(id_usuario:number,nombre_usuario: string, usuario_usuario: string, clave_usuario): void {
     // name = name.trim();
     // address = address.trim();
     // phone_number = phone_number.trim();

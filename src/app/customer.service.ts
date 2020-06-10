@@ -16,9 +16,10 @@ export class CustomerService {
   //private baseUrl = 'http://192.168.0.187:8084';  //host my house, backend-server
   private baseUrl = 'http://180.5.5.187:8084'; //host my work, backend-server
   private serviceUrlAnterior="/customers";
-  private serviceUrlTestMasr="/ai/usuario/buscar/id";
+  private serviceUrlTestBuscarId="/ai/usuario/buscar/id";
+  private serviceUrlTestAgregar="/ai/usuario/agregar";
   private serviceUrlTestMasrBuscar="/ai/usuario/buscar/nombre?buscar_texto= &pagina=1";
-  private serviceUrl=this.serviceUrlTestMasr;
+  private serviceUrl=this.serviceUrlTestBuscarId;
 
   getCustomers(): Observable<Customer[]> {
     return this.http.get<Customer[]>(this.baseUrl + `${this.serviceUrlTestMasrBuscar}`);
@@ -30,7 +31,10 @@ export class CustomerService {
   }
 
   addCustomer(customer: Customer): Observable<any> {
-    return this.http.post(this.baseUrl + `${this.serviceUrl}`, customer, httpOptions);
+    // let user {nombre_usuario,usuario_usuario,clave_usuario}=customer;
+    // return console.log(customer);
+    // return console.log(user);
+    return this.http.post(this.baseUrl + `${this.serviceUrlTestAgregar}`, customer, httpOptions);
   }
 
   updateCustomer(customer: Customer): Observable<any> {
